@@ -20,13 +20,13 @@ function isIndexedDBAvailable() {
 
 // Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDM70I15Pi_dtUuDhFfb0PhauAbJHHL9PM",
-  authDomain: "leetrack-55833.firebaseapp.com",
-  projectId: "leetrack-55833",
-  storageBucket: "leetrack-55833.firebasestorage.app",
-  messagingSenderId: "325613206477",
-  appId: "1:325613206477:web:8b81fa81a2c19e8eed6284",
-  measurementId: "G-V9HHHW32D2",
+  apiKey: 
+  authDomain:
+  projectId:
+  storageBucket:
+  messagingSenderId:
+  appId: 
+  measurementId: 
 }
 
 // Check if we're in a browser environment
