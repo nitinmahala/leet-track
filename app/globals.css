@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 37 100% 54%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 45 100% 56%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 210 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 37 100% 54%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 10%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 15%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 15%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 37 100% 54%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 45 100% 56%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 210 100% 40%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 37 100% 54%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for difficulty badges */
+.difficulty-easy {
+  @apply bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+}
+
+.difficulty-medium {
+  @apply bg-leetcode-yellow/20 text-leetcode-orange dark:bg-leetcode-yellow/10 dark:text-leetcode-yellow;
+}
+
+.difficulty-hard {
+  @apply bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300;
+}
+
+/* Status badges */
+.status-solved {
+  @apply bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+}
+
+.status-attempted {
+  @apply bg-leetcode-yellow/20 text-leetcode-orange dark:bg-leetcode-yellow/10 dark:text-leetcode-yellow;
+}
+
+.status-todo {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300;
+}
+
+/* Streak calendar */
+.streak-calendar {
+  @apply grid grid-cols-7 gap-1;
+}
+
+.streak-day {
+  @apply h-6 w-6 rounded-sm flex items-center justify-center text-xs;
+}
+
+.streak-active {
+  @apply bg-leetcode-orange text-white;
+}
+
+.streak-inactive {
+  @apply bg-muted text-muted-foreground;
+}
+
+.streak-today {
+  @apply ring-2 ring-leetcode-blue;
+}
+
+/* Glassmorphism */
+.glass {
+  @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/20 dark:border-white/10;
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-lg dark:bg-black/40 dark:border-white/10;
+}
+
+.glass-navbar {
+  @apply bg-white/80 backdrop-blur-md border-b border-white/20 shadow-sm dark:bg-black/50 dark:border-white/10;
+}
+
+.glass-sidebar {
+  @apply bg-white/60 backdrop-blur-md border-r border-white/20 dark:bg-black/30 dark:border-white/10;
+}
+
+/* Neumorphism */
+.neu-light {
+  @apply bg-gray-100;
+  box-shadow: 5px 5px 10px #d9d9d9, -5px -5px 10px #ffffff;
+}
+
+.dark .neu-light {
+  @apply bg-gray-800;
+  box-shadow: 5px 5px 10px #1a1a1a, -5px -5px 10px #2c2c2c;
+}
+
+.neu-button {
+  @apply bg-gray-100;
+  box-shadow: 3px 3px 6px #d9d9d9, -3px -3px 6px #ffffff;
+  transition: box-shadow 0.2s ease;
+}
+
+.neu-button:hover {
+  box-shadow: 1px 1px 2px #d9d9d9, -1px -1px 2px #ffffff;
+}
+
+.neu-button:active {
+  box-shadow: inset 3px 3px 6px #d9d9d9, inset -3px -3px 6px #ffffff;
+}
+
+.dark .neu-button {
+  @apply bg-gray-800;
+  box-shadow: 3px 3px 6px #1a1a1a, -3px -3px 6px #2c2c2c;
+}
+
+.dark .neu-button:hover {
+  box-shadow: 1px 1px 2px #1a1a1a, -1px -1px 2px #2c2c2c;
+}
+
+.dark .neu-button:active {
+  box-shadow: inset 3px 3px 6px #1a1a1a, inset -3px -3px 6px #2c2c2c;
+}
+
+.neu-card {
+  @apply bg-gray-100;
+  box-shadow: 8px 8px 16px #d9d9d9, -8px -8px 16px #ffffff;
+}
+
+.dark .neu-card {
+  @apply bg-gray-800;
+  box-shadow: 8px 8px 16px #1a1a1a, -8px -8px 16px #2c2c2c;
+}
+
+.neu-inset {
+  @apply bg-gray-100;
+  box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+.dark .neu-inset {
+  @apply bg-gray-800;
+  box-shadow: inset 5px 5px 10px #1a1a1a, inset -5px -5px 10px #2c2c2c;
+}
+
+/* Gradient effects */
+.gradient-primary {
+  @apply bg-gradient-to-r from-leetcode-orange to-leetcode-yellow text-white;
+}
+
+.gradient-card {
+  @apply bg-gradient-to-br from-white to-gray-100 dark:from-gray-800 dark:to-gray-900;
+}
+
+.gradient-button {
+  @apply bg-gradient-to-r from-leetcode-orange to-leetcode-yellow hover:from-leetcode-orange/90 hover:to-leetcode-yellow/90 text-white transition-all duration-300;
+}
+
+/* Hover effects */
+.hover-lift {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+.hover-glow {
+  @apply transition-all duration-300 hover:shadow-[0_0_15px_rgba(255,161,22,0.5)];
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-leetcode-orange/30 rounded-full hover:bg-leetcode-orange/50;
+}
